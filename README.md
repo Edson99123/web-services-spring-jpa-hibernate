@@ -21,3 +21,22 @@ Objetivos
 ---------------------------------------------------------------
  * Logical Layers
 ![1](https://user-images.githubusercontent.com/29668363/145064200-514b6bfd-5bf0-4cd0-ad3a-f589bc179bc2.PNG)
+---------------------------------------------------------------
+Project created 
+ 
+Checklist: 
+*  File -> New -> Spring Starter Project 
+ *  Maven 
+ *  Java 11 
+ *  Packing JAR 
+ *  Dependencies: Spring Web Starter 
+--------------------------------------------------------------- 
+User entity and resource 
+ 
+Basic entity checklist: 
+ * Basic attributes 
+ * Associations (instantiate collections) 
+ *  Constructors 
+ *  Getters & Setters (collections: only get) 
+ *  hashCode & equals 
+ *  Serializable 
