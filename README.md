@@ -18,3 +18,6 @@ Objetivos
 ---------------------------------------------------------------
  * Domain Instance
 ![1](https://user-images.githubusercontent.com/29668363/145063821-6d9430f0-8726-48d3-bc21-e8220ef7ded9.PNG)
+---------------------------------------------------------------
+ * Logical Layers
+![1](https://user-images.githubusercontent.com/29668363/145064200-514b6bfd-5bf0-4cd0-ad3a-f589bc179bc2.PNG)
