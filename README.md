@@ -2,11 +2,14 @@
 Projeto web services com Spring Boot e JPA / Hibernate 
  
 Objetivos 
-  Criar projeto Spring Boot Java 
-  Implementar modelo de domínio 
-  Estruturar camadas lógicas: resource, service, repository 
-  Configurar banco de dados de teste (H2) 
-  Povoar o banco de dados 
-  CRUD - Create, Retrieve, Update, Delete 
-  Tratamento de exceções 
+1 - Criar projeto Spring Boot Java 
+2 - Implementar modelo de domínio 
+3 - Estruturar camadas lógicas: resource, service, repository 
+4 - Configurar banco de dados de teste (H2) 
+5 - Povoar o banco de dados 
+6 - CRUD - Create, Retrieve, Update, Delete 
+7 - Tratamento de exceções 
+---------------------------------------------------------------
+Spring Boot, Apache Tomcat, Maven, H2, Postman
+![Screenshot](images/1.png)
 ---------------------------------------------------------------
