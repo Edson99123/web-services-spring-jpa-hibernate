@@ -12,73 +12,79 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name  = "tb_order")
-public class Order implements Serializable{
-		private static final long serialVersionUID = 1L;
-		
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private Long id;
-		private Instant moment;
-		
-		@ManyToOne
-		@JoinColumn(name = "client_id")
-		private User client;
-		
-		
-		/**
-		 * Cosntrutor sem argumentos*/
-		public Order() {
-		}
+@Table(name = "tb_order")
+public class Order implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-		/**
-		 * Construtor com argumentos*/
-		public Order(Long id, Instant moment, User client) {
-			super();
-			this.id = id;
-			this.moment = moment;
-			this.client = client;
-		}
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-		public Long getId() {
-			return id;
-		}
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
+	private Instant moment;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+	@ManyToOne
+	@JoinColumn(name = "client_id")
+	private User client;
 
-		public Instant getMoment() {
-			return moment;
-		}
+	/**
+	 * Cosntrutor sem argumentos
+	 */
+	public Order() {
+	}
 
-		public void setMoment(Instant moment) {
-			this.moment = moment;
-		}
+	/**
+	 * Construtor com argumentos
+	 */
+	public Order(Long id, Instant moment, User client) {
+		super();
+		this.id = id;
+		this.moment = moment;
+		this.client = client;
+	}
 
-		public User getClient() {
-			return client;
-		}
+	public Long getId() {
+		return id;
+	}
 
-		public void setClient(User client) {
-			this.client = client;
-		}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-		@Override
-		public int hashCode() {
-			return Objects.hash(id, moment);
-		}
+	public Instant getMoment() {
+		return moment;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			Order other = (Order) obj;
-			return Objects.equals(id, other.id) && Objects.equals(moment, other.moment);
-		}
+	public void setMoment(Instant moment) {
+		this.moment = moment;
+	}
+
+	public User getClient() {
+		return client;
+	}
+
+	public void setClient(User client) {
+		this.client = client;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, moment);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Order other = (Order) obj;
+		return Objects.equals(id, other.id) && Objects.equals(moment, other.moment);
+	}
 }
