@@ -12,8 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.delivery.webservicejpa.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_order")
@@ -26,6 +26,9 @@ public class Order implements Serializable {
 
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant moment;
+	
+	
+	private Integer ordesStatus;
 
 	@ManyToOne
 	@JoinColumn(name = "client_id")
@@ -40,10 +43,11 @@ public class Order implements Serializable {
 	/**
 	 * Construtor com argumentos
 	 */
-	public Order(Long id, Instant moment, User client) {
+	public Order(Long id, Instant moment, OrderStatus ordesStatus, User client) {
 		super();
 		this.id = id;
 		this.moment = moment;
+		setOrdesStatus(ordesStatus); 
 		this.client = client;
 	}
 
@@ -61,6 +65,17 @@ public class Order implements Serializable {
 
 	public void setMoment(Instant moment) {
 		this.moment = moment;
+	}
+
+	
+	public OrderStatus getOrdesStatus() {
+		return OrderStatus.valueOf(ordesStatus);
+	}
+
+	public void setOrdesStatus(OrderStatus ordesStatus) {
+		if (ordesStatus != null) {
+			this.ordesStatus = ordesStatus.getCode();
+		}	
 	}
 
 	public User getClient() {
