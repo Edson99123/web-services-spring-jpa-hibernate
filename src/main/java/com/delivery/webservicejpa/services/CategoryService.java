@@ -1,9 +1,7 @@
 package com.delivery.webservicejpa.services;
 
 import com.delivery.webservicejpa.entities.Category;
-import com.delivery.webservicejpa.entities.User;
 import com.delivery.webservicejpa.repositories.CategoryRepository;
-import com.delivery.webservicejpa.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

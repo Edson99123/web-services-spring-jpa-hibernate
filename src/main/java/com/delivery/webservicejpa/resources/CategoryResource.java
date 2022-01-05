@@ -1,9 +1,7 @@
 package com.delivery.webservicejpa.resources;
 
 import com.delivery.webservicejpa.entities.Category;
-import com.delivery.webservicejpa.entities.User;
 import com.delivery.webservicejpa.services.CategoryService;
-import com.delivery.webservicejpa.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
