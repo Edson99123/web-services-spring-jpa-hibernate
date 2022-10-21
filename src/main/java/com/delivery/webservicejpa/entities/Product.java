@@ -27,8 +27,6 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "id.product")
     private Set<OrderItem> items = new HashSet<>();
 
-
-
     /**
      * Contructor sem args */
     public Product(){
@@ -85,10 +83,18 @@ public class Product implements Serializable {
         this.imgUrl = imgUrl;
     }
 
-    public Set<Category> getCategories() {
+    public Set<Category> getCategories(){
         return categories;
     }
 
+   /* public Set<Order> getOrders(){
+        Set<Order> set = new HashSet<>();
+        for (OrderItem x : items){
+             set.add(x.getOrder());
+        }
+        return  set;
+    }
+*/
     @JsonIgnore
     public Set<Order> getOrders() {
         Set<Order> set = new HashSet<>();
